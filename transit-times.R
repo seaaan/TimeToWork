@@ -5,8 +5,8 @@ WORK_ADDRESS <- "1100 Eastlake Ave E, Seattle, WA 98109"
 
 # want to calculate the trip for commute times on a Monday
 # enter the next Monday here: 
-monday_morning <- "2017-04-24 07:45:00"
-monday_evening <- "2017-04-24 17:00:00"
+monday_morning <- "2017-06-26 07:45:00"
+monday_evening <- "2017-06-26 17:00:00"
 
 # ask google for the route
 get_route <- function(origin, destination, departure) {
@@ -47,17 +47,14 @@ transit_times <- function(address) {
     # print summaries of length of time ------------------------------------
     to <- paste0(c("TO WORK:", durations(to_work)), collapse = " ")
     #departure_times(to_work)
-    print(to)
+ #   print(to)
     
     from <- paste0(c("FROM WORK:", durations(from_work)), collapse = " ")
-    print(from)
+ #   print(from)
     #departure_times(from_work)
 
     # this return the to and from work geocode objects in case you want to
     # do something with them
-    invisible(list(to_work, from_work))
+ #   invisible(list(to_work, from_work))
+    list(to = to, from = from)
 }
-
-transit_times("2114 30th Ave S, Seattle, WA 98144")
-transit_times("34 Florentia St, Seattle, WA 98109")
-transit_times("253 NW 42nd St, Seattle, WA 98107")
